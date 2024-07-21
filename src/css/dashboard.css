@@ -6,6 +6,10 @@
 
 
 .moneycard {
+   
+    box-sizing: border-box;
     font-family: coolvetica;
     font-size: 20px;
+    align-items: center;
+    gap: 10px;
 }
