@@ -1,12 +1,12 @@
 import React from 'react'
-import '../css/dashboard.css'
+import '../../css/dashboard.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function MoneyCard({heading,iconBackColor,iconColor,Currency,amount,status,icon}:MoneyCardProps) {
   return (
     <div>
-        <div className="container">
+       
     <div className='moneycard'>{heading}</div>
     
     <div className="row" style={{marginTop:"5px"}}>
@@ -17,7 +17,6 @@ export default function MoneyCard({heading,iconBackColor,iconColor,Currency,amou
      </div>
      <div className="row" style={{marginTop:"5px"}}>
     <div className='moneycard' style={{color:'#86a1c3'}}>{status}</div>
-    </div>
     </div>
     </div>
    
