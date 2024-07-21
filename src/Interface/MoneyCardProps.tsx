@@ -1,0 +1,3 @@
+interface MoneyCardProps {
+    heading: string;
+  }

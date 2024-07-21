@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'coolvetica';
+    src: local('coolvetica'),
+    url('../font/coolvetica.ttf') format('truetype');
+}
+
+
+.moneycard {
+    font-family: coolvetica;
+    font-size: 20px;
+}
