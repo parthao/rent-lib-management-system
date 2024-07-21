@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import MoneyCard from "./Components/MoneyCard.tsx";
-// import { CURRENCY } from "./Constants/componentConstants.tsx";
-import ProgressBar from "./Components/MicroComponent/ProgressBar.tsx";
+import { CURRENCY } from "./Constants/componentConstants.tsx";
+// import ProgressBar from "./Components/MicroComponent/ProgressBar.tsx";
+import MoneyCardProgress from "./Components/MacroComponent/MoneyCardProgress.tsx";
 // import DashBoard from "./Components/DashBoard.tsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,6 +20,16 @@ root.render(
       status="2 unpaid"
       icon="bi-bank"
     ></MoneyCard> */}
-    <ProgressBar value={30} max={100} />
+    {/* <ProgressBar value={30} max={100} /> */}
+    <MoneyCardProgress
+      heading="Unpaid expenses"
+      iconBackColor="#feedef"
+      iconColor="#f25874"
+      Currency={CURRENCY.INR}
+      amount="14785.145"
+      icon="bi-bank"
+      value={30}
+      max={100}
+    ></MoneyCardProgress>
   </React.StrictMode>
 );
