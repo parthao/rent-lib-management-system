@@ -16,7 +16,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh 'chmod -R +rwx ./jenkins/script/deliver.sh'
-                sh './jenkins/scripts/deliver.sh'
+                sh './jenkins/script/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
