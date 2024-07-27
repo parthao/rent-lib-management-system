@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Noyh-Heavy';
+    src: local('Noyh-Heavy'),
+    url('../font/Noyh-Heavy.ttf') format('truetype');
+}
+
+
+.side-bar-menu-font {
+    font-family: Noyh-Heavy;
+    font-size: 18px;
+    color: aliceblue;
+    
+}
+
+.main-div{
+    height: 100%;
+}
+
+.side-bar-icon
+{
+    color:#24cd9f;
+}
+
+.side-bar-menu-item
+{
+    margin-top: 2%;
+}
+
+
+.side-bar-menu-item:hover{
+  
+    cursor: pointer;
+    background-color: #173864;
+    font-size: 21px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 10px;
+}

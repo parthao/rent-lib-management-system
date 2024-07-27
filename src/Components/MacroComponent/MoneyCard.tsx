@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function MoneyCard({heading,iconBackColor,iconColor,Currency,amount,status,icon}:MoneyCardProps) {
   return (
-    <div>
+    <div style={{padding:"20px", backgroundColor:"white", borderRadius:"15px"}}>
        
     <div className='moneycard'>{heading}</div>
     

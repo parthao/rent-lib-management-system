@@ -6,7 +6,7 @@ import ProgressBar from '../MicroComponent/ProgressBar.tsx'
 
 export default function MoneyCardProgress({heading,iconBackColor,Currency,amount,icon,iconColor,value,max}:MoneyCardProgressProps) {
     return (
-        <div>
+        <div style={{padding:"20px", backgroundColor:"white", borderRadius:"15px"}}>
            
         <div className='moneycard'>{heading}</div>
         <div className="row" style={{marginTop:"5px"}}>

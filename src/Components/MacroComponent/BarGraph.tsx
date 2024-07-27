@@ -8,6 +8,7 @@ import React from 'react';
     const ovalHeight = 20; // Height of the oval caps
 
     return (
+      <div style={{padding:"20px", backgroundColor:"white", borderRadius:"15px"}}>
       <svg width={width} height={height}>
         {data.map((d, i) => {
           const barHeight = (d.value / maxValue) * (height - 2 * ovalHeight); // Subtracting margins for ovals
@@ -48,6 +49,7 @@ import React from 'react';
           );
         })}
       </svg>
+      </div>
     );
   }
   export default BarChart;

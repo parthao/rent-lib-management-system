@@ -1,11 +1,11 @@
 import React from 'react'
-import { useState } from 'react';
+//import { useState } from 'react';
 
 export default function DonutChart({ data,
   colors,
   size = 200,
   innerRadius = 50 }:DonutChartProps) {
-    const [tooltip, setTooltip] = useState<{ visible: boolean, x: number, y: number, label: string }>({ visible: false, x: 0, y: 0, label: '' });
+    //const [tooltip, setTooltip] = useState<{ visible: boolean, x: number, y: number, label: string }>({ visible: false, x: 0, y: 0, label: '' });
  
     const totalValue = data.reduce((acc, datum) => acc + datum.value, 0);
   let cumulativeValue = 0;
@@ -16,19 +16,19 @@ export default function DonutChart({ data,
   const innerCircleRadius = (innerRadius / 100) * radius;
 
 
-  const handleMouseOver = (event: React.MouseEvent<SVGPathElement>, label: string) => {
-    event.currentTarget.getBoundingClientRect();
-    setTooltip({
-      visible: true,
-      x: event.clientX ,
-      y: event.clientY,
-      label
-    });
-  };
+  // const handleMouseOver = (event: React.MouseEvent<SVGPathElement>, label: string) => {
+  //   event.currentTarget.getBoundingClientRect();
+  //   setTooltip({
+  //     visible: true,
+  //     x: event.clientX ,
+  //     y: event.clientY,
+  //     label
+  //   });
+  // };
 
-  const handleMouseOut = () => {
-    setTooltip({ visible: false, x: 0, y: 0, label: '' });
-  };
+  // const handleMouseOut = () => {
+  //   setTooltip({ visible: false, x: 0, y: 0, label: '' });
+  // };
 
 
   return (
@@ -53,14 +53,14 @@ export default function DonutChart({ data,
             key={index}
             d={pathData}
             fill={colors ? colors[index % colors.length] : defaultColors[index % defaultColors.length]}
-            onMouseOver={(e) => handleMouseOver(e, datum.label)}
-            onMouseOut={handleMouseOut}
+            // onMouseOver={(e) => handleMouseOver(e, datum.label)}
+            // onMouseOut={()=>handleMouseOut}
           />
         );
       })}
       <circle cx={radius} cy={radius} r={innerCircleRadius} fill="white" />
     </svg>
-    {tooltip.visible && (
+    {/* {tooltip.visible && (
       <div
         style={{
           position: 'absolute',
@@ -76,7 +76,7 @@ export default function DonutChart({ data,
       >
         {tooltip.label}
       </div>
-    )}
+    )} */}
   </div>
   )
 }

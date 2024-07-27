@@ -3,6 +3,7 @@ import BarChart from './BarGraph.tsx'
 import MoneyCard from './MoneyCard.tsx';
 import { CURRENCY } from '../../Constants/componentConstants.tsx';
 import MoneyCardProgress from './MoneyCardProgress.tsx';
+import DonutChart from './DonutChart.tsx';
 
 
 const data = [
@@ -20,9 +21,17 @@ const data = [
     { label: "Dec", value: 30 },
   ];
 
+  const dataDonut = [
+    { label: "Mac", value: 10 },
+    { label: "Blue", value: 20 },
+    { label: "Yellow", value: 30 },
+    { label: "Green", value: 40 },
+  ];
+  const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"];
+
 export default function DashBoard() {
   return (
-    <div className='container'>
+    <div  style={{backgroundColor:"#f3f5f7"}}>
     <h1>Dashboard</h1>
     
     <div className='row'>
@@ -71,7 +80,12 @@ export default function DashBoard() {
       icon="bi-bank" ></MoneyCard> 
       </div>
     </div>
-    <BarChart data={data} />
+    <div className='mt-3'> <BarChart  data={data} /></div>
+   
+
+    <div style={{ padding: "20px" }}>
+      <DonutChart data={dataDonut} colors={colors} size={200} />
+    </div>
      
     </div>
   )
