@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../../css/sidemenu.css'
 
 export default function SideMenu() {
+   
+
   return (
-    <div className='main-div' style={{backgroundColor: '#062a5a'}}>
+    <div style={{backgroundColor: '#062a5a',height:"100vh", position: 'fixed'}}>
         <div className='side-bar-menu-font'>
         MENU
         <div className='side-bar-menu-item'>&nbsp;&nbsp;<i className='bi bi-boxes side-bar-icon'></i>&nbsp;&nbsp;&nbsp;Dashboard</div>
@@ -14,6 +16,7 @@ export default function SideMenu() {
         <div className='side-bar-menu-item'>&nbsp;&nbsp;<i className='bi bi-window side-bar-icon'></i>&nbsp;&nbsp;&nbsp;Application </div>
         <div className='side-bar-menu-item'>&nbsp;&nbsp;<i className='bi bi-arrow-repeat side-bar-icon'></i>&nbsp;&nbsp;&nbsp;Maintainnanace</div>
         </div>
+        
     </div>
     
   )
