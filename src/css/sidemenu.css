@@ -35,3 +35,9 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.linkto
+{
+    text-decoration: none;
+    color: aliceblue;
+}

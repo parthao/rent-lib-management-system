@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "react-router-dom": "^6.26.0",
     "typescript": "^5.5.4"
   }
 }
