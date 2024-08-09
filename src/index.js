@@ -6,7 +6,6 @@ import ReactDOM from "react-dom/client";
 //import MoneyCardProgress from "./Components/MacroComponent/MoneyCardProgress.tsx";
 import Landing from "./Components/MacroComponent/Landing.tsx";
 //import DonutChart from "./Components/MacroComponent/DonutChart.tsx";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

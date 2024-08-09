@@ -2,7 +2,7 @@ import React, { useState ,useEffect } from 'react';
 import "../../css/datagrid.css"
 
 const DataGrid = ({ columns, data, RowsPerPage }) => {
-    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+    const [sortConfig, setSortConfig] = useState({ key: 0, direction: 'ascending' });
     const [currentPage, setCurrentPage] = useState(1);
     const [rowsPerPage, setRowsPerPage] = useState(RowsPerPage);
     const [searchQueries, setSearchQueries] = useState({});
