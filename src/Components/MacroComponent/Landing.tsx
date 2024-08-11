@@ -4,6 +4,7 @@ import DashBoard from './DashBoard.tsx'
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import User from '../Pages/User.tsx';
+import Property from '../Pages/Property.tsx';
 
 export default function Landing() {
   return (
@@ -13,11 +14,9 @@ export default function Landing() {
       <SideMenu />
     </div>
     <Routes>
-    <Route path="/" element={<div className="dashboard">
-      <DashBoard />
-    </div>} />
-
+    <Route path="/" element={<div className="dashboard"><DashBoard /></div>} />
     <Route path="User" element={<User />} />
+    <Route path="Property" element={<Property />} />
     
     </Routes>
   </div>
