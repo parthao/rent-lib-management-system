@@ -5,10 +5,19 @@ table {
   
   th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
   }
   
   th {
     cursor: pointer;
-    background-color: #f2f2f2;
+    padding: 2px;
+    background-color: #e3efff;
+  }
+
+  .searchbox
+  {
+    border-radius: 6px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
   }

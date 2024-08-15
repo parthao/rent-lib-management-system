@@ -41,3 +41,16 @@
     text-decoration: none;
     color: aliceblue;
 }
+
+.acordian-menu .sub-menu {
+    display: none; /* Hide by default */
+  }
+  
+  .acordian-menu.active .sub-menu {
+    display: block; /* Show when active */
+  }
+  
+
+  .side-bar-menu-font li {
+    list-style-type: none; /* Ensure no bullets for individual list items */
+}
