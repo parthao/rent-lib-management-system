@@ -1,23 +1,50 @@
 table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-  }
-  
-  th {
-    cursor: pointer;
-    padding: 2px;
-    background-color: #e3efff;
-  }
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .searchbox
-  {
-    border-radius: 6px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    padding-left: 10px;
-  }
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+th {
+  cursor: pointer;
+  padding: 2px;
+  background-color: #e3efff;
+}
+
+.searchbox {
+  border-radius: 6px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.statustagunpaid {
+  color: white;
+  border: solid;
+  border-radius: 20px;
+  padding: 5px;
+  width: 100px; /* Add a specific width */
+  display: inline-block; /* Ensure the element respects the width */
+  text-align: center;
+  background: rgb(255, 0, 0);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.statustagpaid {
+  color: rgb(0, 0, 0);
+  border: solid;
+  border-radius: 20px;
+  border-color: white;
+  padding: 5px;
+  width: 100px; /* Add a specific width */
+  display: inline-block; /* Ensure the element respects the width */
+  text-align: center;
+  background: rgb(60, 255, 0);
+  font-size: 12px;
+  font-weight: bold;
+}

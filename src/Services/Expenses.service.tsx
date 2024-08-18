@@ -3,11 +3,12 @@ import apiSecurity from "../Security.jsx";
 
 const secureAPI = apiSecurity.security;
 
-const Expenses = () => {
-  return httpClient.get("/api/Bill", secureAPI);
+const ExpensesBill = () => {
+  return httpClient.get("/api/Bill/GetAllBillWithProperties", secureAPI);
 };
 
 
+
 export default {
-  Expenses,
+  ExpensesBill,
 };
