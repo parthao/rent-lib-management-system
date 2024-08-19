@@ -1,0 +1,47 @@
+/* ToggleSwitch.css */
+.toggle-switch {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.switch {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.switch.on {
+  background-color: #4caf50;
+}
+
+.switch.off {
+  background-color: #ccc;
+}
+
+.switch-handle {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s ease;
+}
+
+.switch.on .switch-handle {
+  left: 32px;
+}
+
+.switch.off .switch-handle {
+  left: 2px;
+}
+
+p {
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}

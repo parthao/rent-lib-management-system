@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import firebaseDB from "../../Firebase.tsx";
+import ToggleSwitch from "../MacroComponent/ToggleSwitch.tsx";
 
 export default function Application() {
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
 
   const Push = () => {
     firebaseDB
-      .ref("user")
+      .ref("Home")
       .set({
-        name: name,
-        age: age,
+        FirstRoom: name,
       })
       .catch(alert);
   };
@@ -25,15 +24,13 @@ export default function Application() {
         />
         <br />
         <br />
-        <input
-          placeholder="Enter your age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        />
+
         <br />
         <br />
         <button onClick={Push}>PUSH</button>
       </center>
+
+      <ToggleSwitch></ToggleSwitch>
     </div>
   );
 }
