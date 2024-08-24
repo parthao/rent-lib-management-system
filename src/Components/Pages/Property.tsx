@@ -20,7 +20,7 @@ export default function Property() {
   return (
     <div>
       <h1>My Data Grid</h1>
-      <DataGrid columns={columns} data={data} RowsPerPage={5} />
+      <DataGrid columns={columns} data={data} RowsPerPage={5} onRowClick={""} />
     </div>
   );
 }

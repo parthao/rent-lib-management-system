@@ -1,0 +1,30 @@
+.accordion {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+  padding: 0 10px;
+}
+
+.accordion-content.open {
+  max-height: none; /* Adjust based on content length */
+  padding: 10px;
+}
+
+.accordion-content p {
+  margin: 0;
+}

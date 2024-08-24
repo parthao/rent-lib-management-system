@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import firebaseDB from "../../Firebase.tsx";
 import ToggleSwitch from "../MacroComponent/ToggleSwitch.tsx";
+import Accordion from "../MacroComponent/Accordion.tsx";
+import PropertyService from "../../Services/Property.service.tsx";
 
 export default function Application() {
   const [name, setName] = useState("");
-
+  const [data, setData] = useState([]);
   const Push = () => {
     firebaseDB
       .ref("Home")
@@ -13,6 +15,12 @@ export default function Application() {
       })
       .catch(alert);
   };
+
+  useEffect(() => {
+    PropertyService.PropertyWithRoomsList().then((data) => {
+      setData(data.data);
+    });
+  }, []);
 
   return (
     <div className="App" style={{ marginTop: 250 }}>
@@ -30,7 +38,15 @@ export default function Application() {
         <button onClick={Push}>PUSH</button>
       </center>
 
-      <ToggleSwitch></ToggleSwitch>
+      {data.map((property) => (
+        <Accordion title={property.propertyName}>
+          {property.rooms.map(() => (
+            <div>
+              <ToggleSwitch></ToggleSwitch>
+            </div>
+          ))}
+        </Accordion>
+      ))}
     </div>
   );
 }

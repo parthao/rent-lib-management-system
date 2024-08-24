@@ -48,15 +48,22 @@ const columns = [
       const year = date.getFullYear(); // Full year
 
       var formattedDate = `${day}/${month}/${year}`;
+      var realFormattedDate = `${day}/${month}/${year}`;
       var status = "statustagpaid";
 
       if (formattedDate == "01/01/1970") {
         formattedDate = String("Not Paid");
+        realFormattedDate = String("");
         var status = "statustagunpaid";
       } else {
         formattedDate = String("Paid");
       }
-      return <span className={status}>{formattedDate}</span>;
+      return (
+        <span className={status}>
+          {formattedDate}
+          <div>{realFormattedDate}</div>
+        </span>
+      );
     },
   },
 ];
@@ -71,7 +78,7 @@ export default function Bill() {
   return (
     <div>
       <h1>Bills</h1>
-      <DataGrid columns={columns} data={data} RowsPerPage={5} />
+      <DataGrid columns={columns} data={data} RowsPerPage={5} onRowClick={""} />
     </div>
   );
 }
