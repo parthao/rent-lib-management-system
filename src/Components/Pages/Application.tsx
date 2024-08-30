@@ -15,7 +15,10 @@ const columns = [
     key: "action",
     title: "Action",
     render: (r) => (
-      <FireBaseSwitch Reference="Home" Field={r.roomName}></FireBaseSwitch>
+      <FireBaseSwitch
+        Reference={r.propertyID}
+        Field={r.roomName}
+      ></FireBaseSwitch>
     ),
   },
 ];
@@ -32,17 +35,6 @@ export default function Application() {
 
   return (
     <div className="App">
-      <input
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <br />
-      <br />
-
-      <br />
-      <br />
-
       {data.map((property) => (
         <Accordion title={property.propertyName}>
           <DataGrid
