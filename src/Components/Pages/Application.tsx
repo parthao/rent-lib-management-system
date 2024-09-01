@@ -12,6 +12,11 @@ const columns = [
     render: (r) => <div>{r.roomName}</div>,
   },
   {
+    key: "pinnumber",
+    title: "PIN Number",
+    render: (r) => <div>{r.pinNumber}</div>,
+  },
+  {
     key: "action",
     title: "Action",
     render: (r) => (
