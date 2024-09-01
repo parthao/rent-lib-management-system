@@ -5,6 +5,7 @@ import FireBaseSwitch from "../MacroComponent/FireBaseSwitch.tsx";
 import Accordion from "../MacroComponent/Accordion.tsx";
 import PropertyService from "../../Services/Property.service.tsx";
 import DataGrid from "../MacroComponent/DataGrid.tsx";
+//import { Property } from "../../Interface/ApplicationProps.tsx";
 
 const columns = [
   {
@@ -31,11 +32,11 @@ const columns = [
 
 export default function Application() {
   const [name, setName] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Property[]>([]);
 
   useEffect(() => {
-    PropertyService.PropertyWithRoomsList().then((data) => {
-      setData(data.data);
+    PropertyService.PropertyWithRoomsList().then((response) => {
+      setData(response.data as Property[]);
     });
   }, []);
 
