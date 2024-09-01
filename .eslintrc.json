@@ -1,8 +1,7 @@
 {
-    // other ESLint configuration
-    "rules": {
-      // other rules
-      "import/no-anonymous-default-export": "off"
-    }
+  // other ESLint configuration
+  "rules": {
+    // other rules
+    "import/no-anonymous-default-export": "off"
   }
-  
+}

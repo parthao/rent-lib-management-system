@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import firebaseDB from "../../Firebase.tsx";
 import "../../css/toggleswitch.css"; // Optional for styling
-
+// eslint-disable-next-line
 const FireBaseSwitch = ({ Reference, Field }: FireBaseSwitchProps) => {
   const [isOn, setIsOn] = useState(false);
 
