@@ -42,8 +42,8 @@ export default function Application() {
 
   return (
     <div className="App">
-      {data.map((property) => (
-        <Accordion title={property.propertyName}>
+      {data.map((property, key) => (
+        <Accordion key={key} title={property.propertyName}>
           <DataGrid
             columns={columns}
             data={property.rooms.map((r) => r)}

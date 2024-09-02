@@ -72,11 +72,8 @@ const DataGrid = ({ columns, data, RowsPerPage, onRowClick }) => {
       <table>
         <thead>
           <tr>
-            {columns.map((column) => (
-              <th
-                key={column.key}
-                style={{ width: "150px", whiteSpace: "nowrap" }}
-              >
+            {columns.map((column, key) => (
+              <th key={key} style={{ width: "150px", whiteSpace: "nowrap" }}>
                 <div
                   style={{
                     display: "flex",
@@ -135,8 +132,8 @@ const DataGrid = ({ columns, data, RowsPerPage, onRowClick }) => {
           </tr>
         </thead>
         <tbody>
-          {paginatedData.map((row) => (
-            <tr key={row.id} onClick={() => onRowClick && onRowClick(row)}>
+          {paginatedData.map((row, key) => (
+            <tr key={key} onClick={() => onRowClick && onRowClick(row)}>
               {columns.map((column) => (
                 <td key={column.key}>
                   {column.render ? column.render(row) : row[column.key]}
