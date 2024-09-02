@@ -23,7 +23,7 @@ const columns = [
     title: "Action",
     render: (r) => (
       <FireBaseSwitch
-        Reference={r.propertyID}
+        Reference={String(r.propertyID)}
         Field={r.roomName}
       ></FireBaseSwitch>
     ),
