@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+import "firebase/database"; // Add this line to include the Realtime Database module
 
 const firebaseConfig = {
   apiKey: "AIzaSyCfZRSflHsk0xwbV4vr52uy3SdbbMq78fI",
