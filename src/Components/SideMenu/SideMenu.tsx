@@ -86,10 +86,12 @@ export default function SideMenu() {
           </Link>
         </li>
         <li>
-          <div className="side-bar-menu-item">
-            &nbsp;&nbsp;<i className="bi bi-arrow-repeat side-bar-icon"></i>
-            &nbsp;&nbsp;&nbsp;Maintenance
-          </div>
+          <Link className="linkto" to="StudentReg">
+            <div className="side-bar-menu-item">
+              &nbsp;&nbsp;<i className="bi bi-arrow-repeat side-bar-icon"></i>
+              &nbsp;&nbsp;&nbsp;Student Registration
+            </div>
+          </Link>
         </li>
       </ul>
     </div>

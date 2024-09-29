@@ -7,6 +7,7 @@ import User from "../Pages/User.tsx";
 import Property from "../Pages/Property.tsx";
 import Bill from "../Pages/Bill.tsx";
 import Application from "../Pages/Application.tsx";
+import StudentReg from "../Pages/StudentReg.tsx";
 
 export default function Landing() {
   return (
@@ -34,6 +35,7 @@ export default function Landing() {
           <Route path="Property" element={<Property />} />
           <Route path="Bill" element={<Bill />} />
           <Route path="Application" element={<Application />} />
+          <Route path="StudentReg" element={<StudentReg />} />
         </Routes>
       </div>
     </BrowserRouter>
