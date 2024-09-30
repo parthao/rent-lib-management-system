@@ -7,6 +7,7 @@ const InputTextBox = ({
   handleChange,
   type = "text",
   required,
+  error,
 }) => {
   return (
     <div className="form-group">
@@ -19,6 +20,8 @@ const InputTextBox = ({
         onChange={(e) => handleChange(e.target.value)}
         placeholder={placeholder}
       />
+      {error && <small className="text-danger">{error}</small>}{" "}
+      {/* Display error below input */}
     </div>
   );
 };
