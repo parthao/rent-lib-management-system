@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../css/imagebox.css";
 import StudentService from "../../Services/Student.service.tsx";
 
-export default function ImageBox({ url }) {
+export default function ImageBox({ url, onUploadComplete, required, error }) {
   const [imageUrl, setImageUrl] = useState(url);
   const [uploadMessage, setUploadMessage] = useState("");
 
@@ -22,7 +22,9 @@ export default function ImageBox({ url }) {
       StudentService.UploadImage(formData)
         .then((response) => {
           setUploadMessage("Image uploaded successfully");
-          console.log("Upload success:", response.data);
+          if (onUploadComplete) {
+            onUploadComplete(response.data.url); // Assuming the server responds with the image URL
+          }
         })
         .catch((error) => {
           debugger;
@@ -50,6 +52,7 @@ export default function ImageBox({ url }) {
         className="imgarrange"
         onChange={handleImageChange}
       />
+      {error && <small className="text-danger">{error}</small>}{" "}
     </div>
   );
 }

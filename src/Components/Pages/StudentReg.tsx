@@ -4,9 +4,11 @@ import StudentService from "../../Services/Student.service.tsx";
 import { validationRules } from "../../Validation/validationRules.tsx";
 import { validateForm } from "../../Validation/validateForm.tsx";
 import ImageBox from "../MacroComponent/ImageBox.tsx";
-import { color } from "chart.js/helpers";
 
 const StudentReg = () => {
+  const uploadUrl = process.env.REACT_APP_UPLOAD;
+  const defaultImage = process.env.REACT_APP_DEFAULT_IMAGE;
+
   const [formData, setFormData] = useState<StudentRegProps>({
     firstName: "",
     lastName: "",
@@ -18,6 +20,7 @@ const StudentReg = () => {
     mobileNumber: "",
     guardianName: "",
     guardianContact: "",
+    image: "1727883839419",
   });
 
   // Define validation rules for each field
@@ -31,6 +34,7 @@ const StudentReg = () => {
     mobileNumber: [validationRules.required, validationRules.isPhoneNumber],
     guardianName: [validationRules.required],
     guardianContact: [validationRules.required, validationRules.isPhoneNumber],
+    image: [validationRules.required, validationRules.isImage],
   };
   const [errors, setErrors] = useState({});
   const handleInputChange = (field, value) => {
@@ -59,11 +63,16 @@ const StudentReg = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="text-center mb-4">Student Registration</h1>
+      <h1 className="mb-4">Student Registration</h1>
       <div className="row">
         <div className="col-md-12  d-flex justify-content-end">
           <ImageBox
-            url={"https://cdn.staticneo.com/w/naruto/Nprofile2.jpg"}
+            url={`${uploadUrl}/student/${defaultImage}.png`}
+            onUploadComplete={(newUrl) => {
+              console.log("Uploaded image available at:", newUrl);
+            }}
+            required={true}
+            error={errors.image} // Pass error to InputTextBox
           ></ImageBox>
         </div>
       </div>

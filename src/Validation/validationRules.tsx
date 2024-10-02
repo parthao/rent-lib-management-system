@@ -12,4 +12,6 @@ export const validationRules = {
     /^[2-9]{1}[0-9]{11}$/.test(value) ? "" : "Must be a valid Aadhaar number",
   isPhoneNumber: (value) =>
     /^[0-9]{10}$/.test(value) ? "" : "Must be a 10-digit phone number",
+  isImage: (value) =>
+    value != "1727883839419" ? "" : "Please enter Student Image",
 };
