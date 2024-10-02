@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../../css/imagebox.css";
+import StudentService from "../../Services/Student.service.tsx";
 
 export default function ImageBox({ url }) {
   const [imageUrl, setImageUrl] = useState(url);
+  const [uploadMessage, setUploadMessage] = useState("");
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -12,6 +14,21 @@ export default function ImageBox({ url }) {
         setImageUrl(reader.result);
       };
       reader.readAsDataURL(file);
+
+      const formData = new FormData(); // Create a FormData object
+      formData.append("image", file); // Append the image file, just like in the curl command
+
+      // Upload the image
+      StudentService.UploadImage(formData)
+        .then((response) => {
+          setUploadMessage("Image uploaded successfully");
+          console.log("Upload success:", response.data);
+        })
+        .catch((error) => {
+          debugger;
+          setUploadMessage("Failed to upload image");
+          console.error("Upload error:", error);
+        });
     }
   };
 
@@ -19,9 +36,10 @@ export default function ImageBox({ url }) {
     <div>
       <label htmlFor="file-input">
         <img
+          className="imgarrange"
           src={imageUrl}
           alt="Upload Preview"
-          style={{ cursor: "pointer", width: "300px", height: "auto" }}
+          style={{ cursor: "pointer" }}
         />
       </label>
       <input
@@ -29,6 +47,7 @@ export default function ImageBox({ url }) {
         type="file"
         accept="image/*"
         style={{ display: "none" }}
+        className="imgarrange"
         onChange={handleImageChange}
       />
     </div>
