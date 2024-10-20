@@ -70,6 +70,10 @@ const StudentReg = () => {
             url={`${uploadUrl}/student/${defaultImage}.png`}
             onUploadComplete={(newUrl) => {
               console.log("Uploaded image available at:", newUrl);
+              setFormData((prevFormData) => ({
+                ...prevFormData, // Copy all the previous form data
+                image: newUrl, // Update the image field with the new value
+              }));
             }}
             required={true}
             error={errors.image} // Pass error to InputTextBox

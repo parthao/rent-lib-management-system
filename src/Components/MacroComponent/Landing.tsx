@@ -8,6 +8,8 @@ import Property from "../Pages/Property.tsx";
 import Bill from "../Pages/Bill.tsx";
 import Application from "../Pages/Application.tsx";
 import StudentReg from "../Pages/StudentReg.tsx";
+import CCTV from "../Pages/CCTV.tsx";
+import StudentList from "../Pages/StudentList.tsx";
 
 export default function Landing() {
   return (
@@ -36,6 +38,8 @@ export default function Landing() {
           <Route path="Bill" element={<Bill />} />
           <Route path="Application" element={<Application />} />
           <Route path="StudentReg" element={<StudentReg />} />
+          <Route path="StudentList" element={<StudentList />} />
+          <Route path="CCTV" element={<CCTV />} />
         </Routes>
       </div>
     </BrowserRouter>

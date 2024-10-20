@@ -12,7 +12,12 @@ const UploadImage = (formData) => {
   return httpUploadClient.post("/upload-image", formData);
 };
 
+const GetStudent = () => {
+  return httpClient.get("/api/Student/StudentsList");
+};
+
 export default {
   SaveStudent,
   UploadImage,
+  GetStudent,
 };
