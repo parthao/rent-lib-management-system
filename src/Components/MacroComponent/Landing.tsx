@@ -24,23 +24,26 @@ export default function Landing() {
         <div style={{ backgroundColor: "#062a5a" }}>
           <SideMenu />
         </div>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="dashboard">
-                <DashBoard />
-              </div>
-            }
-          />
-          <Route path="User" element={<User />} />
-          <Route path="Property" element={<Property />} />
-          <Route path="Bill" element={<Bill />} />
-          <Route path="Application" element={<Application />} />
-          <Route path="StudentReg" element={<StudentReg />} />
-          <Route path="StudentList" element={<StudentList />} />
-          <Route path="CCTV" element={<CCTV />} />
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="dashboard">
+                  <DashBoard />
+                </div>
+              }
+            />
+
+            <Route path="User" element={<User />} />
+            <Route path="Property" element={<Property />} />
+            <Route path="Bill" element={<Bill />} />
+            <Route path="Application" element={<Application />} />
+            <Route path="StudentReg" element={<StudentReg />} />
+            <Route path="StudentList" element={<StudentList />} />
+            <Route path="CCTV" element={<CCTV />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

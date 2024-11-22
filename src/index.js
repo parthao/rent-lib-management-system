@@ -5,11 +5,14 @@ import ReactDOM from "react-dom/client";
 // import ProgressBar from "./Components/MicroComponent/ProgressBar.tsx";
 //import MoneyCardProgress from "./Components/MacroComponent/MoneyCardProgress.tsx";
 import Landing from "./Components/MacroComponent/Landing.tsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 //import DonutChart from "./Components/MacroComponent/DonutChart.tsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
     <Landing></Landing>
+    <ToastContainer />
   </React.StrictMode>
 );

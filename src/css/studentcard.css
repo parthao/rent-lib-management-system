@@ -1,0 +1,129 @@
+.card-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  width: 300px;
+  height: 450px;
+  border-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  position: relative;
+  background-color: #4c545c;
+  text-align: center;
+}
+
+.hex1 {
+  display: grid;
+  place-items: center; /* Centers both horizontally and vertically */
+  margin-top: 40px;
+  height: 200px;
+  width: 200px;
+  background: #8d8786;
+  -webkit-clip-path: polygon(
+    50% 0%,
+    95% 25%,
+    95% 75%,
+    50% 100%,
+    5% 75%,
+    5% 25%
+  );
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.hex2 {
+  height: 185px;
+  width: 185px;
+  background: rgb(255, 0, 85);
+  -webkit-clip-path: polygon(
+    50% 0%,
+    95% 25%,
+    95% 75%,
+    50% 100%,
+    5% 75%,
+    5% 25%
+  );
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.triangle1 {
+  height: 112px;
+  width: 300px;
+  background: #78b7d9;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  bottom: 0; /* Position at the bottom of card-container */
+}
+
+.triangle2 {
+  height: 150px;
+  width: 300px;
+  background: #2d4e9b;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  bottom: 0; /* Position at the bottom of card-container */
+}
+
+.triangle3 {
+  height: 142px;
+  width: 300px;
+  background: #78b7d9;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  top: 0; /* Position at the bottom of card-container */
+  transform: rotate(180deg);
+}
+
+.triangle4 {
+  height: 180px;
+  width: 300px;
+  background: #2d4e9b;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+
+  top: 0; /* Position at the bottom of card-container */
+  transform: rotate(180deg);
+}
+
+.root-container {
+  color: #78b7d9;
+  max-width: 100%; /* Adjusts to the screen size */
+  width: 100%; /* Makes the container responsive */
+  display: flex;
+  gap: 20px; /* Adds space between boxes */
+  flex-wrap: wrap; /* Moves items to a new line if needed */
+  margin-top: 20px;
+}
+
+.responsive-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the entire container */
+}
+
+.text-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 235px;
+}
+
+.heading-text {
+  font-size: 25px;
+  color: #ffffff;
+  margin: 0; /* Remove default margin */
+  text-align: left;
+}
+
+.normal-text {
+  width: 180px;
+  font-size: 15px;
+  color: #ffffff;
+  margin-top: 10px; /* Space below heading-text */
+  text-align: left;
+}

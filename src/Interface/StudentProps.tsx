@@ -1,6 +1,8 @@
 interface StudentRegProps {
   firstName: string;
   lastName: string;
+  fatherName: string;
+  motherName: string;
   address: string;
   age: number;
   gender: string;
@@ -9,6 +11,7 @@ interface StudentRegProps {
   mobileNumber: string;
   guardianName: string;
   guardianContact: string;
+  image: string;
 }
 
 interface StudentListProps {

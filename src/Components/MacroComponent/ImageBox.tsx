@@ -52,7 +52,11 @@ export default function ImageBox({ url, onUploadComplete, required, error }) {
         className="imgarrange"
         onChange={handleImageChange}
       />
-      {error && <small className="text-danger">{error}</small>}{" "}
+      {error && (
+        <div>
+          <small className="text-danger">{error}</small>
+        </div>
+      )}{" "}
     </div>
   );
 }

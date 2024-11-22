@@ -4,6 +4,8 @@ import StudentService from "../../Services/Student.service.tsx";
 import { validationRules } from "../../Validation/validationRules.tsx";
 import { validateForm } from "../../Validation/validateForm.tsx";
 import ImageBox from "../MacroComponent/ImageBox.tsx";
+import "../../Interface/StudentProps.tsx";
+import Notification from "../MacroComponent/Notification.tsx";
 
 const StudentReg = () => {
   const uploadUrl = process.env.REACT_APP_UPLOAD;
@@ -12,6 +14,8 @@ const StudentReg = () => {
   const [formData, setFormData] = useState<StudentRegProps>({
     firstName: "",
     lastName: "",
+    fatherName: "",
+    motherName: "",
     address: "",
     age: 0,
     gender: "",
@@ -23,10 +27,30 @@ const StudentReg = () => {
     image: "1727883839419",
   });
 
+  const resetForm = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      fatherName: "",
+      motherName: "",
+      address: "",
+      age: 0,
+      gender: "",
+      preparation: "",
+      aadhaarNumber: "",
+      mobileNumber: "",
+      guardianName: "",
+      guardianContact: "",
+      image: "1727883839419", // Reset the image to an empty string or its default value
+    });
+  };
+
   // Define validation rules for each field
   const fieldRules = {
     firstName: [validationRules.required],
     lastName: [validationRules.required],
+    fatherName: [validationRules.required],
+    motherName: [validationRules.required],
     address: [validationRules.required],
     age: [validationRules.required, validationRules.isNumber],
     gender: [validationRules.required],
@@ -36,26 +60,57 @@ const StudentReg = () => {
     guardianContact: [validationRules.required, validationRules.isPhoneNumber],
     image: [validationRules.required, validationRules.isImage],
   };
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<StudentRegProps>({
+    firstName: "",
+    lastName: "",
+    fatherName: "",
+    motherName: "",
+    address: "",
+    age: 0,
+    gender: "",
+    preparation: "",
+    aadhaarNumber: "",
+    mobileNumber: "",
+    guardianName: "",
+    guardianContact: "",
+    image: "1727883839419",
+  });
   const handleInputChange = (field, value) => {
-    setFormData({ ...formData, [field]: value });
+    if (
+      checkWhitespace(value) &&
+      (field == "motherName" || field == "fatherName")
+    ) {
+      console.log("Space");
+    } else {
+      setFormData({ ...formData, [field]: value });
+    }
   };
+
+  function checkWhitespace(str) {
+    return /\s/.test(str);
+  }
 
   const saveStudent = () => {
     // Validate the form
+
     const validationErrors = validateForm(formData, fieldRules);
 
     if (Object.keys(validationErrors).length === 0) {
       // If no errors, submit the form
       StudentService.SaveStudent(formData)
         .then((response) => {
-          console.log("Student saved successfully:", response.data);
+          {
+            resetForm();
+            Notification.Success("Student Saved Successfully");
+          }
+          debugger;
         })
         .catch((error) => {
           console.error("Error saving student:", error);
         });
     } else {
       // Set errors if validation fails
+      Notification.Error("Please fill form Properly");
       setErrors(validationErrors);
       console.error("Error saving student:", validationErrors);
     }
@@ -102,6 +157,31 @@ const StudentReg = () => {
             type="text"
             required={true}
             error={errors.lastName} // Pass error to InputTextBox
+          />
+        </div>
+      </div>
+
+      <div className="row mb-6">
+        <div className="col-md-6">
+          <InputTextBox
+            label="Mother Name"
+            placeholder="Enter Mother Name"
+            value={formData.motherName}
+            handleChange={(value) => handleInputChange("motherName", value)}
+            type="text"
+            required={true}
+            error={errors.motherName} // Pass error to InputTextBox
+          />
+        </div>
+        <div className="col-md-6">
+          <InputTextBox
+            label="Father Name"
+            placeholder="Enter Father Name"
+            value={formData.fatherName}
+            handleChange={(value) => handleInputChange("fatherName", value)}
+            type="text"
+            required={true}
+            error={errors.fatherName} // Pass error to InputTextBox
           />
         </div>
       </div>
